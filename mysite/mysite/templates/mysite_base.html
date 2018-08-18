@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="/static/global_styles/favicon.png"/>
+    <script src="https://craig.global.ssl.fastly.net/js/mousetrap/mousetrap.min.js?a4098"></script>
+    {% block links_head %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="/static/global_styles/css/bulma.css"/>
+        <link rel="stylesheet" href="/static/global_styles/css/main.css"/>
+        <script src="/static/global_styles/js/jquery-1.11.2.min.js"></script>
+        <script src="/static/global_styles/js/main.js"></script>
+    {% endblock %}
+    {% if request.get_full_path == '/' %}
+        <title>IGIQ Suite</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/static/global_styles/css/bootstrap.css"/>
+        <link rel="stylesheet" href="/static/global_styles/css/main.css"/>
+        <link rel="stylesheet" href="/static/global_styles/css/tools.css"/>
+        <link rel="shortcut icon" href="/static/global_styles/favicon.png"/>
+         <script src="/static/global_styles/js/jquery-1.11.2.min.js"></script>
+         <script src="/static/global_styles/js/bootstrap.js"></script>
+        <script src="/static/global_styles/js/main.js"></script>
+    {% endif %}
+</head>
+<body>
+    {% if request.get_full_path == '/' %}
+        {% include 'tools.html' %}
+    {% else %}
+        {% block apps_content %}
+        {% endblock %}
+    {% endif %}
+
+    {% if messages %}
+        {% for message in messages %}
+            <div id="message_popup" style="text-align:center">
+                <div class="floating-section-message">
+                    <article class="message is-small is-{{ message.tags }}">
+                        <div class="message-header">
+                            <p>{{ message.tags | capfirst }}</p>
+                            <button class="delete" aria-label="delete" onclick="closeMessage(this)"></button>
+                        </div>
+                        <div class="message-body">
+                            {{ message }}<br/>
+                            {{ form.non_field_errors }}
+                        </div>
+                    </article>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>
