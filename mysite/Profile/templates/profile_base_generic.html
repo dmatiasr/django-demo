@@ -4,7 +4,7 @@
 {% block links_head %}
     {% with 'v1' as version %}
         <meta charset="UTF-8">
-        <title> Pofile </title>
+        <title> Profile </title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/static/global_styles/css/fontawesome/web-fonts-with-css/css/fontawesome-all.css"/>
         <link rel="stylesheet" href="//cdn.materialdesignicons.com/2.0.46/css/materialdesignicons.min.css">
@@ -31,19 +31,24 @@
 {% block apps_content %}
     {% block sub_navbar %}
     {% endblock %}
-    <nav class="navbar">
+    <nav class="nav nav-profile">
         <div class="container">
-        <!-- Nav items -->
+            <div class="nav-left">
+                    Left
+            </div>
             <div class="nav-center is-hidden-mobile">
                 <a class="nav-item is-tab {% if 'profile' in request.path %}is-active{% endif %}"
                    href="{% url 'profile' %}">
-                   Nav items
+                   Center WELCOME
                 </a>
+            </div>
+            <div class="nav-right">
+                Right
             </div>
         </div>
     </nav>
     {% block content %}
-        <div style="padding-top: 82px;"></div>
+        <div style="/*padding-top: 82px;*/"></div>
         {% block section_content %}
             <!-- Herarchy root -->
         {% endblock %}
