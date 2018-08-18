@@ -1,6 +1,7 @@
 {% extends 'mysite_base.html' %}
 {% load static %}
 
+
 {% block links_head %}
     {% with 'v1' as version %}
         <meta charset="UTF-8">
@@ -25,4 +26,19 @@
         <script src="https://unpkg.com/flatpickr"></script>
         <script src="/static/global_styles/js/tipped/tipped.js"></script>
     {% endwith %}
+{% endblock %}
+
+
+{% block apps_content %}
+    {% block sub_navbar %}
+    {% endblock %}
+    <nav>
+
+        Some navbar
+
+    </nav>
+    {% block content %}
+    {% endblock %}
+    <div id="modalContentLog" class="container is-hidden"></div>
+    <script src="/static/Profile/main/js/main.js"></script>
 {% endblock %}
