@@ -1,0 +1,81 @@
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+
+.nav-fixed {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid #ddd;
+    background-color: #fcfcfc;
+}
+
+.nav-fixed .button.is-link {
+    text-decoration: none;
+}
+
+.dropdown-user {
+    border: hidden;
+    background-color: transparent;
+}
+
+.notificacion {
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.notificacion.unseen {
+    background-color: whitesmoke;
+}
+
+/* dropdown profile */
+.has-dropdown:hover .menu-onhover {
+    display: block;
+}
+
+.popup-menu {
+    text-align: left;
+    width: 200px;
+    top: 40px;
+    display: none;
+    position: absolute;
+    z-index: 15;
+}
+
+.media-right .popup-menu {
+    text-align: left;
+    width: 200px;
+    top: 0;
+    right:32px;
+    display: none;
+    position: absolute;
+    z-index: 15;
+    border-top-right-radius: 0px;
+}
+
+.popup-menu a {
+    color: #4a4a4a;
+}
+
+.popup-menu li:not(:last-of-type) {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.popup-menu li:not(:first-of-type) {
+    padding-top: 10px;
+}
+
+.floating-section-message {
+    position: fixed;
+    right: 1em;
+    top: 4em;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    width: auto;
+    z-index: 9999;
+}
