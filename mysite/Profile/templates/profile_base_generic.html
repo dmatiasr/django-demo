@@ -33,10 +33,11 @@
     {% endblock %}
     <nav class="navbar">
         <div class="container">
+        <!-- Nav items -->
             <div class="nav-center is-hidden-mobile">
                 <a class="nav-item is-tab {% if 'profile' in request.path %}is-active{% endif %}"
-                   href="{% url 'profile_dashboard' %}">
-                   Profile
+                   href="{% url 'profile' %}">
+                   Nav items
                 </a>
             </div>
         </div>
@@ -44,7 +45,7 @@
     {% block content %}
         <div style="padding-top: 82px;"></div>
         {% block section_content %}
-            <!-- Herarchy -->
+            <!-- Herarchy root -->
         {% endblock %}
     {% endblock %}
     <div id="modalContentLog" class="container is-hidden"></div>
