@@ -28,3 +28,5 @@ $.ajaxSetup({
         }
     }
 });
+
+console.log('Worked');
