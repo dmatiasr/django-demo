@@ -25,6 +25,7 @@ media
 .idea/**/shelf
 
 # Sensitive or high-churn files
+mysite/.idea/*
 .idea/**/dataSources/
 .idea/**/dataSources.ids
 .idea/**/dataSources.local.xml
