@@ -31,10 +31,15 @@
 {% block apps_content %}
     {% block sub_navbar %}
     {% endblock %}
-    <nav>
-
-        Some navbar
-
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-center is-hidden-mobile">
+                <a class="nav-item is-tab {% if 'profile' in request.path %}is-active{% endif %}"
+                   href="{% url 'profile_dashboard' %}">
+                   Profile
+                </a>
+            </div>
+        </div>
     </nav>
     {% block content %}
     {% endblock %}
