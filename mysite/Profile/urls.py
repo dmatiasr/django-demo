@@ -1,7 +1,7 @@
 from django.conf.urls import url, include
 from . import views
 
-urlpatterns=[
+urlpatterns = [
     url(r'^$', views.index, name='profile'),
-    #url(r'^profile$', views.profile, name='profile_dashboard')
+    url(r'^get_proffesionals/$', views.get_proffesionals, name='get_proffesionals')
 ]

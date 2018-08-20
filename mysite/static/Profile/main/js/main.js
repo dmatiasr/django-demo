@@ -29,4 +29,35 @@ $.ajaxSetup({
     }
 });
 
-console.log('Worked');
+var proffessionalList = null;
+
+function getProffesionals(page) {
+    console.log('entre')
+    proffessionalList = $.ajax({
+        type: "GET",
+        url: '/profile/get_proffesionals/',
+        data: {
+
+        },
+        beforeSend: function (xhr, settings) {
+            if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                xhr.setRequestHeader("X-CSRFToken", csrftoken);
+            }
+            if (proffessionalList != null) {
+                if (proffessionalList.readyState != 4) {
+                    proffessionalList.abort();
+                }
+            }
+        },
+        error: function (e) {
+            console.log('Ajax error',e);
+        },
+        success: function (proffesionals) {
+            $('#proffesionals-catalog').append(proffesionals);
+        }
+    });
+}
+
+function editProfessional(professionalId) {
+    console.log('Edit Professional, TODO : ', professionalId)
+}

@@ -1,5 +1,13 @@
-{% extends 'dashboard/profile_dashboard_section.html' %}
-
-{% block section_content %}
-
-{% endblock %}
+{% for professional in professionals %}
+    <tr id="professional-{{ professional.id }}" onclick="editProfessional('{{ professional.id }}')" style="cursor: pointer">
+        <td>{{ professional.person.first_name }} - {{ professional.person.last_name }}</td>
+        <td>{{ professional.identification }}</td>
+        <td>{{ professional.code_identification }}</td>
+        <td>{{ professional.cuil  }}</td>
+        <td>
+        {% for skill in professional.get_related_skill %}
+            {{ skill.name }}
+        {% endfor %}
+        </td>
+    </tr>
+{% endfor %}

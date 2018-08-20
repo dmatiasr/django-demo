@@ -1,8 +1,33 @@
 {% extends "profile_base_generic.html" %}
 
 {% block section_content %}
+
     <div class="container">
         <h1 class="">Here content</h1>
         <h4>If the content will be greater, think about the inheritance of templates in a more abstract way.</h4>
     </div>
+
+    <div class="container" style="padding-top: 20px">
+        <table class="table is-hoverable" id="proffesionals-catalog">
+             <thead class="thead">
+            <tr>
+                <td>First Name - Last Name</td>
+                <td>Identification</td>
+                <td>Code Identification</td>
+                <td>Cuil</td>
+                <td>Skill List</td>
+            </tr>
+        </thead>
+            <tbody>
+                {% include 'dashboard/profile/profile_professionals_section.html'%}
+            </tbody>
+
+        </table>
+    </div>
+    <script>
+      $(document).ready(function () {
+        getProffesionals()
+
+    });
+    </script>
 {% endblock %}

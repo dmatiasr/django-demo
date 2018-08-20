@@ -7,6 +7,7 @@ def index(request):
 
 
 def get_proffesionals(request):
+    print(request)
     '''
     Funcion que retorna todos los Profesionales de la base de datos.
     :param request:
@@ -14,12 +15,16 @@ def get_proffesionals(request):
     '''
 
     try:
+        p = Professional.objects.all()
+        print(p)
         return render(
             request,
             'dashboard/profile/profile_professionals_section.html',
-            {'professionals': Professional.objects.all()}
+            {'professionals': p}
         )
+
     except Professional.DoesNotExist:
+        print('Exception')
         return render(
             request,
             'dashboard/profile_dashboard_section.html'
