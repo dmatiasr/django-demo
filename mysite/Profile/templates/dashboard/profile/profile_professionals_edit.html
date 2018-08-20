@@ -1,0 +1,43 @@
+{% extends "profile_base_generic.html" %}
+
+{% block section_content %}
+    <div class="container">
+        <div class="section block">
+            <h1 class="title is-4">Edit form</h1>
+            <div class="columns">
+                <div class="column is-2">
+                   <h3>
+                        <label for="">
+                            <small><b> First Name</b></small>
+                        </label>
+                    </h3>
+                    <div class="field">
+                        <div class="control">
+                            <input id="name-input" class="input" type="text"
+                                   placeholder="First Name"
+                                   value="{% if professional.person.first_name %} {{ professional.person.first_name }} {% endif %}">
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-2">
+                   <h3>
+                        <label for="">
+                            <small><b> Last Name</b></small>
+                        </label>
+                    </h3>
+                    <div class="field">
+                        <div class="control">
+                            <input id="last-name-input" class="input" type="text"
+                                   placeholder="Last Name"
+                                   value="{% if professional.person.last_name %} {{ professional.person.last_name }} {% endif %}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="button">SAVE</div>
+                <div class="button">CANCEL</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

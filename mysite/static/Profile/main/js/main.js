@@ -59,5 +59,5 @@ function getProffesionals(page) {
 }
 
 function editProfessional(professionalId) {
-    console.log('Edit Professional, TODO : ', professionalId)
+    location = '/profile/professional/' + professionalId;
 }

@@ -29,3 +29,20 @@ def get_proffesionals(request):
             request,
             'dashboard/profile_dashboard_section.html'
         )
+
+def get_one_proffesional(request, id):
+    try:
+
+        professional_data = Professional.objects.get(id=int(id))
+        print(professional_data)
+        return render(
+            request,
+            'dashboard/profile/profile_professionals_edit.html',
+            {'professional': professional_data }
+
+        )
+    except Professional.DoesNotExist:
+        return render(
+            request,
+            'dashboard/profile_dashboard_section.html'
+        )
