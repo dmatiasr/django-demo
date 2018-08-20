@@ -33,6 +33,23 @@
                         </div>
                     </div>
                 </div>
+                <div class="column">
+                    <div class="field tag">
+                        <p class="control is-expanded">
+                            <input id="born-date" class="input is-small is-primary" type="date"
+                                   data-date-format="Y-m-d"
+                                   placeholder="Born Date" value="" tabindex="8"/>
+                            </p>
+                            <p class="control">
+                                <a class="button is-white is-small date_clear_button" onclick="">
+                                    <span class="icon is-small">
+                                        <i class="fa fa-times"></i>
+                                    </span>
+                                </a>
+                            </p>
+                    </div>
+                </div>
+
             </div>
             <div class="columns">
                 <div class="button">SAVE</div>
@@ -40,4 +57,19 @@
             </div>
         </div>
     </div>
+    <script>
+    $(function () {
+
+
+        bornDate = $("#born-date").flatpickr({
+            dateFormat: "m.d.Y",
+            altInput: true,
+            onChange: function () {
+                filtrarOpp();
+            }
+        });
+
+    });
+
+    </script>
 {% endblock %}
