@@ -5,3 +5,9 @@
     border-bottom: 1px solid #ddd;
     background-color: #fcfcfc;
 }
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column;
+    background-color: #f6f6f6;
+}

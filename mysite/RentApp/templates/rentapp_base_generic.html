@@ -4,7 +4,7 @@
 {% block links_head %}
     {% with 'v1' as version %}
         <meta charset="UTF-8">
-        <title> Profile </title>
+        <title> Busca Tu Lugar </title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/static/global_styles/css/fontawesome/web-fonts-with-css/css/fontawesome-all.css"/>
         <link rel="stylesheet" href="//cdn.materialdesignicons.com/2.0.46/css/materialdesignicons.min.css">
@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css">
         <link rel="stylesheet" href="/static/global_styles/css/bulma.css"/>
         <link rel="stylesheet" href="/static/global_styles/css/main.css"/>
-        <link rel="stylesheet" href="/static/Profile/main/css/main.css?{{ version }}"/>
+        <link rel="stylesheet" href="/static/RentApp/main/css/main.css?{{ version }}"/>
         <link rel="stylesheet" href="/static/global_styles/css/tipped/tipped.css?{{ version }}"/>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"
                 integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
@@ -21,9 +21,10 @@
         <script src="https://unpkg.com/flatpickr"></script>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-        <link rel="stylesheet" href="/static/Profile/main/css/select2.css?{{ version }}"/>
+        <link rel="stylesheet" href="/static/RentApp/main/css/select2.css?{{ version }}"/>
         <script src="https://unpkg.com/flatpickr"></script>
         <script src="/static/global_styles/js/tipped/tipped.js"></script>
+
     {% endwith %}
 {% endblock %}
 
@@ -33,17 +34,21 @@
     {% endblock %}
     <nav class="nav nav-profile">
         <div class="container">
-            <div class="nav-left">
-                    Left
+            <div class="nav-left is-hidden-mobile">
+                    L
             </div>
             <div class="nav-center is-hidden-mobile">
-                <a class="nav-item is-tab {% if 'profile' in request.path %}is-active{% endif %}"
-                   href="{% url 'profile' %}">
-                   Center WELCOME
+                <a class="nav-item is-tab"
+                   href="">
+                   Center
+                </a>
+                <a class="nav-item is-tab {% if 'alquilar' in request.path %}is-active{% endif %}"
+                   href="{% url 'map_section' %}">
+                   Map Section
                 </a>
             </div>
-            <div class="nav-right">
-                Right
+            <div class="nav-right is-hidden-mobile">
+                R
             </div>
         </div>
     </nav>

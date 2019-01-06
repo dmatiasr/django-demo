@@ -1,0 +1,22 @@
+{% extends "rentapp_base_generic.html" %}
+
+{% block section_content %}
+    {% load leaflet_tags %}
+
+    {% leaflet_js %}
+    {% leaflet_css %}
+    <div class="container">
+        <h1 class="">Lugar para creacion/edicion con Mapa</h1>
+        <h2>
+            <div class="box" style="width: 100%; height: 100%;">
+            {% leaflet_map "map_section_api" %}
+            </div>
+        </h2>
+
+    </div>
+    <script>
+    function map_init_basic (map, options) {
+
+    }
+    </script>
+{% endblock %}
