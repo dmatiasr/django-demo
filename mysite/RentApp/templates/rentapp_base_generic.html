@@ -1,0 +1,58 @@
+{% extends 'mysite_base.html' %}
+{% load static %}
+
+{% block links_head %}
+    {% with 'v1' as version %}
+        <meta charset="UTF-8">
+        <title> Profile </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/static/global_styles/css/fontawesome/web-fonts-with-css/css/fontawesome-all.css"/>
+        <link rel="stylesheet" href="//cdn.materialdesignicons.com/2.0.46/css/materialdesignicons.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css">
+        <link rel="stylesheet" href="/static/global_styles/css/bulma.css"/>
+        <link rel="stylesheet" href="/static/global_styles/css/main.css"/>
+        <link rel="stylesheet" href="/static/Profile/main/css/main.css?{{ version }}"/>
+        <link rel="stylesheet" href="/static/global_styles/css/tipped/tipped.css?{{ version }}"/>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+                integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDQiJWTpKN1IFpG5pBrTXI2k6ikW5xBvYM&amp;language=en&amp;libraries=places"></script>
+        <script src="https://unpkg.com/flatpickr"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+        <link rel="stylesheet" href="/static/Profile/main/css/select2.css?{{ version }}"/>
+        <script src="https://unpkg.com/flatpickr"></script>
+        <script src="/static/global_styles/js/tipped/tipped.js"></script>
+    {% endwith %}
+{% endblock %}
+
+
+{% block apps_content %}
+    {% block sub_navbar %}
+    {% endblock %}
+    <nav class="nav nav-profile">
+        <div class="container">
+            <div class="nav-left">
+                    Left
+            </div>
+            <div class="nav-center is-hidden-mobile">
+                <a class="nav-item is-tab {% if 'profile' in request.path %}is-active{% endif %}"
+                   href="{% url 'profile' %}">
+                   Center WELCOME
+                </a>
+            </div>
+            <div class="nav-right">
+                Right
+            </div>
+        </div>
+    </nav>
+    {% block content %}
+        <div style="padding-top: 82px;"></div>
+        {% block section_content %}
+             <!-- Herarchy root -->
+        {% endblock %}
+    {% endblock %}
+    <div id="modalContentLog" class="container is-hidden"></div>
+    <script src="/static/Profile/main/js/main.js"></script>
+{% endblock %}

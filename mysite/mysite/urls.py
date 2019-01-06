@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index, name='tools_index'),
     url(r'^profile/', include('Profile.urls')),
+    url(r'^alquilar/', include('RentApp.urls')),
 ]
