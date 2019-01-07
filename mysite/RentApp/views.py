@@ -19,7 +19,7 @@ def get_properties(request):
     properties = get_property_list_filter(request)
     page = request.GET.get('page', 1)
     try:
-        paginator = Paginator(properties['properties'], 20)
+        paginator = Paginator(properties['properties'], 3)
         paginated_equipments = paginator.page(page)
     except EmptyPage:
         paginated_equipments = None

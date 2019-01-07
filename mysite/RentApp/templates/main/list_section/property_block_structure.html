@@ -1,0 +1,30 @@
+{% if not property_list == None %}
+    {% if property_list|length == 0 %}
+        <h2 class="subtitle has-text-centered" style="margin-top: 10px;">
+           <!-- <img src="/static/Logistics/main/assets/magnifying-glass.svg" alt="" style="height: 6rem">-->
+            <p class="has-text-grey-light">No Properties for this search</p>
+        </h2>
+    {% else %}
+        {% if page < 2 %}
+            <section id="myproperties">
+        {% endif %}
+        {% include "main/list_section/property_structure.html" %}
+        {% if page < 2 %}
+            </section>
+            {% if property_list.has_next %}
+                <div id="scroll-page-property" class="has-text-centered is-hidden">
+                        <span class="icon is-large">
+                            <i class="fas fa-2x fa-sync-alt fa-spin"></i>
+                        </span>
+                </div>
+            {% endif %}
+            <script>
+                var currentPage = 1;
+                var numPages = {{ numPages }};
+                var nextLoaded = true;
+            </script>
+        {% endif %}
+    {% endif %}
+{% else %}
+    <h2 class="subtitle has-text-centered" style="color: #a5a5a5;margin-top: 30px;">No Properties</h2>
+{% endif %}

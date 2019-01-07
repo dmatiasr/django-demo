@@ -14,5 +14,12 @@
         $(document).ready(function () {
             filterProperties('{{ parameter }}');
         })
+        $(window).scroll(function () {
+            if ($(window).scrollTop() + $(window).height() >= ($(document).height()-100) && ($('#scroll-page-property').length > 0 ) && (currentPage <numPages) && nextLoaded == true) {
+                nextLoaded = false;
+                $('#scroll-page-property').removeClass('is-hidden');
+                filterProperties('{{ parameter }}',nextPage);
+            }
+        });
     </script>
 {% endblock %}

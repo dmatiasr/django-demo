@@ -1,0 +1,34 @@
+{% if property_list %}
+    {% for property in property_list %}
+        <section class="">
+        <div class="card">
+            <!--<header class="card-header-title">
+                <p>{{ property.name }}</p>
+            </header>-->
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-left">
+                        <figure class="image is-48x48">
+                            <img src="https://versions.bulma.io/0.7.0/images/placeholders/96x96.png" alt="Placeholder image">
+                        </figure>
+                    </div>
+                    <div class="media-content">
+                        <p class="title-is-4">{{ property.name }}</p>
+                        <p class="subtitle-is-6">{{ property.type }}</p>
+                    </div>
+                    <div class="media-right">{{ property.available }}</div>
+                </div>
+                <div class="content">
+                    {{ property.address }}
+                </div>
+            </div>
+            <footer class="card-footer">
+                <a href="" class="card-footer-item">Ver Más Info</a>
+                <a href="" class="card-footer-item">Ver Ubicación</a>
+            </footer>
+        </div>
+        <br>
+        </section>
+    {% endfor %}
+
+{% endif %}

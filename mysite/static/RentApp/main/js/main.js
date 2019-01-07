@@ -46,7 +46,6 @@ function filterProperties(parameter, page) {
      if (!page) {
         $('#loading').removeClass('is-hidden');
         $('#PropertyList').addClass('is-hidden');
-        $('#PropertyList').addClass('is-hidden');
         $(window).scrollTop(0);
     }
     filterAjaxProperty = $.ajax({
@@ -75,12 +74,12 @@ function filterProperties(parameter, page) {
             if (page) {
                 $('#myproperties').append(propertyHtml.html); //en la url
                 currentPage = page;
-                if (currentPage == numPagesProperties) {
+                if (currentPage == numPages) {
                     $('#scroll-page-property').remove();
                 }
                 nextLoaded = true;
             } else {
-                $('#PropertyList').empty()
+                $('#PropertyList').empty();
                 $('#PropertyList').prepend(propertyHtml.html);
             }
 
