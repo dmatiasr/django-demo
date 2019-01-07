@@ -1,0 +1,18 @@
+{% extends 'rentapp_base_generic.html' %}
+
+{% block section_content %}
+    <section>
+        <div id="loading" class="has-text-centered">
+            <span class="icon is-large ">
+                <i class="fas fa-2x fa-sync-alt fa-spin"></i>
+            </span>
+        </div>
+        <div id="PropertyList"></div>
+    </section>
+
+    <script>
+        $(document).ready(function () {
+            filterProperties('{{ parameter }}');
+        })
+    </script>
+{% endblock %}

@@ -37,14 +37,18 @@
             <div class="nav-left is-hidden-mobile">
                     L
             </div>
-            <div class="nav-center is-hidden-mobile">
+            <div class="nav-center">
+                <a class="nav-item is-tab {% if 'alquilar' in request.path %}is-active{% endif %}"
+                   href="{% url 'index' %}">
+                   Buscar
+                </a>
                 <a class="nav-item is-tab"
                    href="">
-                   Center
+                   Agregar
                 </a>
-                <a class="nav-item is-tab {% if 'alquilar' in request.path %}is-active{% endif %}"
+                <a class="nav-item is-tab"
                    href="{% url 'map_section' %}">
-                   Map Section
+                   Mapa
                 </a>
             </div>
             <div class="nav-right is-hidden-mobile">
@@ -59,5 +63,5 @@
         {% endblock %}
     {% endblock %}
     <div id="modalContentLog" class="container is-hidden"></div>
-    <script src="/static/Profile/main/js/main.js"></script>
+    <script src="/static/RentApp/main/js/main.js"></script>
 {% endblock %}

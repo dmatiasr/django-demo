@@ -3,8 +3,51 @@
 {% block section_content %}
 
     <div class="container">
-        <h1 class="">Here content</h1>
-        <h4>If the content will be greater, think about the inheritance of templates in a more abstract way.</h4>
+        <h1 class="">Seleccione el tipo de busqueda</h1>
+        <h4></h4>
+        <section class="section">
+            <div class="columns">
+                <div class="column">
+                    <div class="box has-text-centered">
+                        <a href="javascript:searchRent('all')">
+                            Mostrar listado completo
+                        </a>
+                    </div>
+                    <div class="box has-text-centered">
+                        <a href="javascript:searchRent('departament')">
+                            Departamento
+                        </a>
+                    </div>
+                    <div class="box has-text-centered">
+                        <a href="javascript:searchRent('house')">
+                            Casa
+                        </a>
+                    </div>
+                    <div class="box has-text-centered">
+                        <a href="javascript:searchRent('camping')">
+                            Camping
+                        </a>
+                    </div>
+                    <div class="box has-text-centered">
+                        <a href="javascript:searchRent('local')">
+                            Local
+                        </a>
+                    </div>
+                    <div class="box has-text-centered">
+                        <a href="javascript:enterAddress()">
+                            Cercano a dirección
+                        </a>
+                    </div>
+
+                    <div class="box has-text-centered">
+                        <a href="javascript:showMapWithData()">
+                            Mostrar en Mapa
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </div>
     <script>
 

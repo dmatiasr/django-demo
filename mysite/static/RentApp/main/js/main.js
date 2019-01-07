@@ -28,3 +28,64 @@ $.ajaxSetup({
         }
     }
 });
+
+function searchRent(parameter) {
+    location = '/alquilar/list_section/list/' + parameter;
+}
+
+function enterAddress() {
+    
+}
+
+function showMapWithData() {
+    
+}
+
+var filterAjaxProperty = null;
+function filterProperties(parameter, page) {
+     if (!page) {
+        $('#loading').removeClass('is-hidden');
+        $('#PropertyList').addClass('is-hidden');
+        $('#PropertyList').addClass('is-hidden');
+        $(window).scrollTop(0);
+    }
+    filterAjaxProperty = $.ajax({
+        type:'POST',
+        url:"/alquilar/get_properties/" + (page != undefined ? '?page=' + page : '?page=1'),
+        data: {
+            'type': parameter
+        },
+        beforeSend: function (xhr, settings) {
+            if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                xhr.setRequestHeader("X-CSRFToken", csrftoken);
+            }
+            if (filterAjaxProperty != null) {
+                if (filterAjaxProperty.readyState != 4) {
+                    filterAjaxProperty.abort();
+                }
+            }
+        },
+        error: function () {
+            //showMessage('error', 'No se han podido cargar los polygonos.')
+        },
+        success: function (propertyHtml) {
+            $('#loading').addClass('is-hidden');
+            $('#PropertyList').removeClass('is-hidden');
+            nextPage = propertyHtml.nextPage;
+            if (page) {
+                $('#myproperties').append(propertyHtml.html); //en la url
+                currentPage = page;
+                if (currentPage == numPagesProperties) {
+                    $('#scroll-page-property').remove();
+                }
+                nextLoaded = true;
+            } else {
+                $('#PropertyList').empty()
+                $('#PropertyList').prepend(propertyHtml.html);
+            }
+
+        }
+
+
+    })
+}
