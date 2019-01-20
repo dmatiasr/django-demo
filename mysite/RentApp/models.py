@@ -9,7 +9,7 @@ class Property(models.Model):
      represent a Property
     '''
     PROPERTY_TYPE = (('house', 'house'), ('departament', 'departament'), ('local', 'local'), ('camping', 'camping'))
-    name = models.CharField(max_length=200, null=True, blank=True)
+    name = models.CharField(max_length=200, null=True, blank=True, unique=True,)
     description = models.CharField(max_length=3000, null=True, blank=True)
     address = models.CharField(max_length=200, null=True, blank=True)
     lat = models.CharField(max_length=30, null=True)

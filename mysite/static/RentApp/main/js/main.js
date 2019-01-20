@@ -30,7 +30,7 @@ $.ajaxSetup({
 });
 
 function searchRent(parameter) {
-    location = '/alquilar/list_section/list/' + parameter;
+    location = '/alquilar/list/' + parameter;
 }
 
 function enterAddress() {
@@ -41,6 +41,11 @@ function showMapWithData() {
     
 }
 
+function seeMore(propertyName) {
+    console.log(propertyName);
+    location = '/alquilar/perfil/' + propertyName;
+    console.log('Che')
+}
 var filterAjaxProperty = null;
 function filterProperties(parameter, page) {
      if (!page) {

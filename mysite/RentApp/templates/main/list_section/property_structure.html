@@ -2,9 +2,6 @@
     {% for property in property_list %}
         <section class="">
         <div class="card">
-            <!--<header class="card-header-title">
-                <p>{{ property.name }}</p>
-            </header>-->
             <div class="card-content">
                 <div class="media">
                     <div class="media-left">
@@ -23,12 +20,11 @@
                 </div>
             </div>
             <footer class="card-footer">
-                <a href="" class="card-footer-item">Ver Más Info</a>
+                <a href="javascript:seeMore('{{ property.name }}')" class="card-footer-item">Ver Más Info</a>
                 <a href="" class="card-footer-item">Ver Ubicación</a>
             </footer>
         </div>
         <br>
         </section>
     {% endfor %}
-
 {% endif %}
