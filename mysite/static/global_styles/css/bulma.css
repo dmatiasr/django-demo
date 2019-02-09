@@ -4458,7 +4458,7 @@ a.dropdown-item {
 
 .nav-item a:not(.button),
 a.nav-item:not(.button) {
-  color: #7a7a7a; }
+  color: #f3f3f3; }
   .nav-item a:not(.button):hover,
   a.nav-item:not(.button):hover {
     color: #363636; }

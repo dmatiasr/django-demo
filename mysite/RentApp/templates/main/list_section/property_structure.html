@@ -13,15 +13,32 @@
                         <p class="title-is-4">{{ property.name }}</p>
                         <p class="subtitle-is-6">{{ property.type }}</p>
                     </div>
-                    <div class="media-right">{{ property.available }}</div>
+                    <div class="media-right">{% if property.available %} Libre {% else %}Ocupado{% endif %}</div>
                 </div>
                 <div class="content">
+                    <div class="columns is-mobile">
+                        <div class="column is-1">
+                            <span class="icon is-small"><i class="fa fa-star" aria-hidden="true" style="color: #bcbcbc"></i></span>
+                        </div>
+                        <div class="column is-1">
+                            <span class="icon is-small"><i class="fa fa-star" aria-hidden="true" style="color: #bcbcbc"></i></span>
+                        </div>
+                        <div class="column is-1">
+                            <span class="icon is-small"><i class="fa fa-star" aria-hidden="true" style="color: #bcbcbc"></i></span>
+                        </div>
+                        <div class="column is-1">
+                            <span class="icon is-small"><i class="fa fa-star" aria-hidden="true" style="color: #bcbcbc"></i></span>
+                        </div>
+                        <div class="column is-1">
+                            <span class="icon is-small"><i class="fa fa-star" aria-hidden="true" style="color: #bcbcbc"></i></span>
+                        </div>
+                    </div>
                     {{ property.address }}
                 </div>
             </div>
             <footer class="card-footer">
-                <a href="javascript:seeMore('{{ property.name }}')" class="card-footer-item">Ver Más Info</a>
-                <a href="" class="card-footer-item">Ver Ubicación</a>
+                <a href="javascript:seeMore('{{ property.name }}')" class="card-footer-item"><small style="color: #525252">Ver Más Info</small></a>
+                <a href="" class="card-footer-item"><small style="color: #525252">Ver Ubicación</small></a>
             </footer>
         </div>
         <br>
