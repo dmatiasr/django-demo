@@ -167,8 +167,8 @@ MEDIA_ROOT =os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 LEAFLET_CONFIG = {
-    'DEFAULT_CENTER': (-40.8079912,-65.1016709),
+    'DEFAULT_CENTER': (-40.8077933, -65.088453),
     'DEFAULT_ZOOM': 13,
-    'MAX_ZOOM':20,
-    'MIX_ZOOM':3,
+    'MAX_ZOOM': 20,
+    'MIX_ZOOM': 3,
 }
