@@ -3,7 +3,7 @@
     top:0;
     width: 100%;
     border-bottom: 1px solid #ddd;
-    background-color: #fcfcfc;
+    background-color: #EC7063;
 }
 body {
     min-height: 100vh;
@@ -11,3 +11,4 @@ body {
     flex-flow: column;
     background-color: #f6f6f6;
 }
+/* #da4646*/

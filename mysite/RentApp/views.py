@@ -5,7 +5,7 @@ from django.http import HttpResponse
 import json
 from .session_functions import get_property_list_filter
 from .models import Property
-
+from django.views.decorators.csrf import csrf_exempt
 def index(request):
     return render(request, 'main/rentapp_main_section.html', {})
 
@@ -15,6 +15,7 @@ def map_section(request):
 def redirect_property_list(request, parameter):
     return render(request, 'main/list_section/property_list_section.html', {'parameter': parameter})
 
+@csrf_exempt
 def get_properties(request):
     properties = get_property_list_filter(request)
     page = request.GET.get('page', 1)
